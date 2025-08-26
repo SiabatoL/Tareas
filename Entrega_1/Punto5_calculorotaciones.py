@@ -2,7 +2,6 @@ import numpy as np
 
 def rotacion(angulo, eje):
 
-
     if eje.lower() == 'x':
         rot = np.array([[1, 0, 0],
                         [0, np.cos(angulo), -np.sin(angulo)],
