@@ -1,6 +1,6 @@
 import numpy as np
         
-# Declaración de vectores
+#vectores
 v1 = np.array([1, 2, 3])
 v2 = np.array([4, 5, 6])
 
