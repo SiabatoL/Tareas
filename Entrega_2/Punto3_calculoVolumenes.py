@@ -14,11 +14,11 @@ def volumen_cilindro(r, h):
 
 
 # Mainmeremeinmein
-print("=== Cálculo de Volúmenes ===")
+print("\n    Cálculo de Volúmenes\n")
 print("1. Prisma")
 print("2. Pirámide")
 print("3. Cono truncado")
-print("4. Cilindro")
+print("4. Cilindro\n")
 
 opcion = int(input("Seleccione el sólido (1-4): "))
 
