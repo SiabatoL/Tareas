@@ -10,7 +10,7 @@ def calcular_fuerzas(d_embolo, d_vastago, presion):
 
     return F_avance, F_retroceso
 
-print("  Cálculo de Fuerzas en Cilindro de Doble Efecto")
+print("\n  Cálculo de Fuerzas en Cilindro de Doble Efecto\n")
     
     # Datos de entrada
 D = float(0.001)  # Diametro émbolo (Metros)
