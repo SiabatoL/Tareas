@@ -459,7 +459,7 @@ def generar_letra_Z():
     # Combinar
     x = np.concatenate([x_z1, x_z2, x_z3])
     y = np.concatenate([y_z1, y_z2, y_z3])
-
+    return x, y
 # =========================
 # Diccionario de letras
 # =========================
@@ -512,8 +512,6 @@ def dibujar_texto(texto):
     plt.axis("equal")
     plt.show()
 
-
-
 # Ejemplo de uso
-texto = input("Escribe una palabra (A-E por ahora): ")
+texto = input("Escribe una palabra: ")
 dibujar_texto(texto)
