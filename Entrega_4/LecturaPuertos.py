@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+import os
 # --- Intento de importar GPIO ---
 try:
     import RPi.GPIO as GPIO
@@ -74,9 +74,10 @@ class Ui_MainWindow(object):
         self.year.setAlignment(QtCore.Qt.AlignCenter)
         self.verticalLayout.addWidget(self.year)
 
-        # --- Logo (placeholder) ---
-        self.logo = QtWidgets.QGraphicsView(self.centralwidget)
+        # --- Logo ---
+        self.logo = QtWidgets.QLabel(self.centralwidget)
         self.logo.setGeometry(QtCore.QRect(470, 460, 331, 131))
+        self.logo.setAlignment(QtCore.Qt.AlignCenter)
 
         # --- Label de Estado ---
         self.testigoLectura = QtWidgets.QLabel(self.centralwidget)
@@ -109,6 +110,20 @@ class Ui_MainWindow(object):
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.actualizar_estado)
         self.timer.start(500)  # 500 ms
+
+        self.mostrar_logo("Logoecci.png")
+
+    def mostrar_logo(self, nombre_archivo):
+        """Muestra el logo en el QLabel inferior derecho"""
+        ruta = os.path.join(os.path.dirname(__file__), nombre_archivo)
+
+        if os.path.exists(ruta):
+            pixmap = QtGui.QPixmap(ruta)
+            pixmap = pixmap.scaled(self.logo.size(), QtCore.Qt.KeepAspectRatio, QtCore.Qt.SmoothTransformation)
+            self.logo.setPixmap(pixmap)
+        else:
+            self.logo.setText("Logo no encontrado")
+
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
